@@ -1,0 +1,21 @@
+{
+  "schedules": [
+    {
+      "name": "heartbeat",
+      "cron": "*/5 * * * *",
+      "path": "/api/cron/heartbeat",
+      "method": "GET"
+    },
+    {
+      "name": "daily-cleanup",
+      "cron": "0 2 * * *",
+      "path": "/api/cron/cleanup",
+      "method": "POST",
+      "payload": {
+        "type": "daily",
+        "dryRun": false
+      },
+      "timeout": 60
+    }
+  ]
+}
